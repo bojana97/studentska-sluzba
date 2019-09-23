@@ -12,8 +12,6 @@ mysqli_stmt_execute($stmt_select);
 
 $rezultat_select=mysqli_stmt_get_result($stmt_select);
 $redovi=mysqli_fetch_assoc($rezultat_select);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -27,60 +25,41 @@ $redovi=mysqli_fetch_assoc($rezultat_select);
 </head>
 
 <body>
-	<div class="wrapper" style="background-color: #C0C0C0; padding-bottom:40px;">
-
-	<!-- Forma za unos podataka studenta -->
-	  <form action="includes/izmijeni.inc.php" method="POST" enctype="multipart/form-data">
-
-<?php
-	if(isset($_GET['msg'])){
-		if($_GET['msg']=='sqlerror'){
-			echo '<p class="alert alert-danger" role="alert">Greska pri unosu. Pokusajte ponovo.</p>';
-		}elseif($_GET['msg']=='success'){
-			echo '<p class="alert alert-success" role="alert">Podaci su uspjesno izmijenjeni.</p>';
-		}
-	}
-?>
+  <div class="wrapper">
+  <!-- Forma za izmjenu podataka studenta -->
+  <form action="includes/izmijeni.inc.php" method="POST" enctype="multipart/form-data">
+	<?php
+		if(isset($_GET['msg'])):
+			if($_GET['msg']=='sqlerror'):
+				echo '<p class="alert alert-danger" role="alert">Greska pri unosu. Pokusajte ponovo.</p>';
+			elseif ($_GET['msg']=='success'):
+				echo '<p class="alert alert-success" role="alert">Podaci su uspjesno izmijenjeni.</p>';
+			endif;
+		endif;
+	?>
 
 	<!-- Indeks -->
-        <input type="hidden" name="brojindx"  value="<?php echo $_GET['indx']; ?>"/>
-
-	<!-- Slika -->
+        <input type="hidden" name="brojindx"  value="<?= $_GET['indx']; ?>"/>
 		<!--<input type="file" name="upload_slike" value=""/> -->
-
-
 	<div class="lbl">JMBG</div>
-		<input type="text" name="jmbg" value="<?php echo $redovi['JMBG'];   ?>"/>
-
+		<input type="text" name="jmbg" value="<?= $redovi['JMBG'];   ?>"/>
 	<div class="lbl">Ime</div>
-        <input type="text" name="ime"  value="<?php echo $redovi['ime'];   ?>"/>
-
+        <input type="text" name="ime"  value="<?= $redovi['ime'];   ?>"/>
 	<div class="lbl">Ime oca</div>
-        <input type="text" name="ime_oca" value="<?php echo $redovi['ime_oca'];   ?>"/>
-
+        <input type="text" name="ime_oca" value="<?= $redovi['ime_oca'];   ?>"/>
 	<div class="lbl">Prezime</div>
-        <input type="text" name="prezime" value="<?php echo $redovi['prezime'];   ?>"/>
-
+        <input type="text" name="prezime" value="<?= $redovi['prezime'];   ?>"/>
 	<div class="lbl">Datum rodjenja</div>
-		<input type="text" name="dat" value="<?php echo $redovi['datum_rodjenja'];   ?>"/>
-
+		<input type="text" name="dat" value="<?= $redovi['datum_rodjenja'];   ?>"/>
 	<div class="lbl">Telefon</div>
-		<input type="text" name="telefon" value="<?php echo $redovi['telefon'];   ?>"/>
-
+		<input type="text" name="telefon" value="<?= $redovi['telefon'];   ?>"/>
 	<div class="lbl">Smjer</div>
-        <input type="text" name="smjer" value="<?php echo $redovi['id_smjera'];   ?>"/>
-
+        <input type="text" name="smjer" value="<?= $redovi['id_smjera'];   ?>"/>
 	<div class="lbl">Godina studija</div>
-		<input type="text" name="godina" value="<?php echo $redovi['godina_studija'];   ?>"/>
-		<p></p>
-
+		<input type="text" name="godina" value="<?= $redovi['godina_studija'];   ?>"/>
 		<input type="file" name="upload_slike" />
-		<p><p/>
 
-        <button type="submit" name="izmijeni-submit">Sacuvaj podatke</button>
-		<button id="otkazi_btn"><a href="pretraga.php">Otkazi</a></button>
-		
+        <input type="submit" name="izmijeni-submit" value="Sacuvaj podatke"/>
+		<button id="otkazi_btn"><a href="pretraga.php">Otkazi</a></button>	
    </form>
-
-
-	</div>
+</div>
