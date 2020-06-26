@@ -21,27 +21,27 @@ Project is created with:
 * Login form.
 
 ![loginform](./readme/login.png)
+
 ***
 
 * Add new student.
 
-![loginform](./readme/newstudent.png)
+![new student](./readme/newstudent.png)
 ***
 
 
 * Search students by index number.
 
-![loginform](./readme/searchstudent.png)
+![search student](./readme/searchstudent.png)
 ***
 
 * List students subjects and grades.
 
-![loginform](./readme/subjectss.png)
-***
+![subjects and grades](./readme/subjectss.png)
 
 * List students financial obligations.
 
-![loginform](./readme/financ.png)
+![finance](./readme/financ.png)
 ***
 
 
