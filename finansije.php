@@ -14,7 +14,7 @@
 <?php
 	if(isset($_POST['search-submit'])){
 
-		require_once 'database.php';
+		require_once 'config/database.php';
 
 		if(empty($_POST['search_polje'])){
 			header('Location: predmeti.php');

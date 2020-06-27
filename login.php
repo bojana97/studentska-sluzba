@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -17,19 +15,19 @@ session_start();
 	<h4 style="text-align:center">Studentska sluzba "APEIRON"</h4>
 
 	<!-- Ispis error poruka -->
-		<?php
-			if (isset($_GET['error'])){
-				if(($_GET['error'])=='emptyfields'){
-					echo '<div class="alert alert-danger" role="alert">Popunite oba polja!</div>';
-				}elseif(($_GET['error'])=='wrongpwd'){
-					echo '<div class="alert alert-danger" role="alert">Pogresno unesena lozinka!</div>';
-				}elseif(($_GET['error'])=='nouser'){
-					echo '<div class="alert alert-danger" role="alert">Ne postoji korisnik sa unesenim podacima!</div>';
-				}
+	<?php
+		if (isset($_GET['error'])){
+			if(($_GET['error'])=='emptyfields'){
+				echo '<div class="alert alert-danger" role="alert">Popunite oba polja!</div>';
+			}elseif(($_GET['error'])=='wrongpwd'){
+				echo '<div class="alert alert-danger" role="alert">Pogresno unesena lozinka!</div>';
+			}elseif(($_GET['error'])=='nouser'){
+				echo '<div class="alert alert-danger" role="alert">Ne postoji korisnik sa unesenim podacima!</div>';
 			}
-		?>
+		}
+	?>
 
-	<!-- Login forma        -->
+	<!-- Login forma  -->
 		<form action="includes/login.inc.php" method="POST">
 			<div class="form-group">
 				<label class="lbl" for="Ime">Korisnicko ime</label>

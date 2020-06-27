@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['sacuvaj-submit'])){
-	require '../database.php';
+	require '../config/database.php';
 
 	$br_indeksa=$_POST['br_indeksa'];
 	$jmbg=$_POST['jmbg'];

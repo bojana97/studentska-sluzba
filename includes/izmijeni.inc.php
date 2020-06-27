@@ -1,12 +1,11 @@
 <?php
 
 session_start();
-	if(!isset($_SESSION['id_korisnika'])){
-		header('Location: ../login.php');
-	}
+if(!isset($_SESSION['id_korisnika'])){
+	header('Location: ../login.php');
+}
 
-
-require_once '../database.php';
+require_once '../config/database.php';
 
 $brojindx=$_POST['brojindx'];
 $jmbg=$_POST['jmbg'];

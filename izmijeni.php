@@ -1,6 +1,6 @@
 <?php
 
-require_once('database.php');
+require_once('config/database.php');
 require_once('pretraga.php');
 
 @$br_indeksa=$_GET['indx'];

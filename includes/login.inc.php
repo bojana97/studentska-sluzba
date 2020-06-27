@@ -2,7 +2,7 @@
 
 if (isset($_POST['prijava-submit'])){
 
-    require_once("../database.php");
+    require_once("../config/database.php");
 
     $ime=$_POST['korisnicko_ime'];
     $lozinka=$_POST['lozinka'];
